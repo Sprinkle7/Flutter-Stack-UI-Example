@@ -54,12 +54,13 @@ class _MainPageState extends State<MainPage> {
               ),
               Container(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Padding(padding: EdgeInsets.only(top:150)),
+                    Padding(padding: EdgeInsets.only(top:30)),
                     SafeArea(
                       child: Container(
                         child: Text(
-                          'App Title',
+                          'App',
                           style: TextStyle(
                              color: Colors.white,
                              fontWeight: FontWeight.bold,
@@ -68,9 +69,10 @@ class _MainPageState extends State<MainPage> {
                         ),
                       ),
                     ),
+                    Padding(padding: EdgeInsets.only(top:30)),
                     CarouselSlider(
                     autoPlay: true,
-                    height: 300.0,
+                    height: 100.0,
                     onPageChanged: (index) {
                       setState(() {
                         _current = index;
@@ -107,7 +109,6 @@ class _MainPageState extends State<MainPage> {
                         ),
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: 60)),
                     Container(
                       child: FlatButton(
                         child: Text('Continue',style: TextStyle(fontSize: 18),),

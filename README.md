@@ -1,7 +1,7 @@
 # Stack UI Example
 ### Demo
 
-![alt text](https://raw.githubusercontent.com/Sprinkle7/Flutter-Stack-UI-Example/blob/master/app.png)
+![alt text](https://raw.githubusercontent.com/Sprinkle7/Flutter-Stack-UI-Example/app.png)
 
 ## Getting Started
 

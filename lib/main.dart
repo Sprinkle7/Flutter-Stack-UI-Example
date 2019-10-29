@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
+import 'signup.dart';
+import 'loginPage.dart';
 
+void main() => runApp(
 
-void main() => runApp(MainPage());
+  MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Stack Example',
+    initialRoute: '/',
+    routes: {
+      '/': (context) => MainPage(),
+      '/signup': (context) => SignUp(),
+      '/login': (context) => LoginPage(),
+    },
+  )
+);
 
 class MainPage extends StatefulWidget {
   @override
@@ -39,10 +52,7 @@ class _MainPageState extends State<MainPage> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Stack Example',
-        home: Scaffold(
+    return Scaffold(
           body: Stack(
             fit: StackFit.expand,
             children: <Widget>[
@@ -60,7 +70,7 @@ class _MainPageState extends State<MainPage> {
                     SafeArea(
                       child: Container(
                         child: Text(
-                          'App',
+                          'Karawan',
                           style: TextStyle(
                              color: Colors.white,
                              fontWeight: FontWeight.bold,
@@ -82,7 +92,6 @@ class _MainPageState extends State<MainPage> {
                       return Builder(
                         builder: (BuildContext context) {
                           return Container(
-                              width: MediaQuery.of(context).size.width,
                               margin: EdgeInsets.symmetric(horizontal: 35.0),
                               child: Center(child: textList[i-1])
                           );
@@ -116,7 +125,11 @@ class _MainPageState extends State<MainPage> {
                         color: Colors.blue,
                         padding: EdgeInsets.symmetric(vertical: 10,
                             horizontal: 75),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => SignUp())
+                          );
+                        },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                           side: BorderSide(color: Colors.blueAccent)
@@ -128,8 +141,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ],
           ),
-        )
-    );
+        );
   }
 
 }

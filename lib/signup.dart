@@ -1,4 +1,5 @@
 import 'package:carapp/loginPage.dart';
+import 'package:carapp/registerpage.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SignUpState extends State<SignUp> {
         children: <Widget>[
           Image(
             image: AssetImage('assets/taxi.jpg'),
-            color: Colors.black87,
+            color: Colors.black54,
             fit: BoxFit.cover,
             colorBlendMode: BlendMode.darken,
           ),
@@ -68,7 +69,11 @@ class _SignUpState extends State<SignUp> {
                           borderRadius: BorderRadius.circular(20),
                           side: BorderSide(color: Colors.blue)
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => Register()
+                          ));
+                        },
                         padding: EdgeInsets.symmetric(vertical: 10, horizontal:
                         75),
                         splashColor: Colors.blue.shade800,

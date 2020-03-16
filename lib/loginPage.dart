@@ -1,3 +1,4 @@
+import 'package:carapp/registerpage.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,22 +10,22 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           Image(
             image: AssetImage('assets/taxi.jpg'),
             fit: BoxFit.cover,
-            color: Colors.black87,
+            color: Colors.black54,
             colorBlendMode: BlendMode.darken,
           ),
-          Container(
+          SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(top: 65),
+                  padding: EdgeInsets.only(top: 150),
                   child: Text(
                     'Login',
                     style: TextStyle(
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 60),
+                  padding: EdgeInsets.only(top: 100),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -140,7 +141,9 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ),
                                 onTap: (){
-                                  print('Helllo');
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) => Register()
+                                  ));
                                 },
                               ),
                               SizedBox(
